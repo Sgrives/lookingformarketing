@@ -1,0 +1,24 @@
+.navbar-brand a, a {
+    transition: color 0.05s ease-in-out;
+}
+.navbar-brand img {
+	width: 75px;
+}
+.navbar .nav-link {
+	text-transform: uppercase;
+	padding: 10px;
+	color: #393E46;
+	font-weight: bold;
+	margin: 5px;
+}
+.navbar .nav-link:hover {
+	color: #ffffff !important;
+	background-color: #393E46;
+	border-radius: 5px;
+}
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+	color: #ffffff !important;
+	background-color: #393E46;
+	border-radius: 5px;
+	margin: 5px;
+}
