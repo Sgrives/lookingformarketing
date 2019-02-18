@@ -1,16 +1,23 @@
 @extends('layouts.app')
 
-@section('meta_title')
-    | {{$company->name}}
+@section('meta_info')
+    <title>LFM Jobs - {{ $company->name }}</title>
 @endsection
 
 @section('content')
-	<div class="row justify-content-center dark-bg">
+	<div class="row justify-content-center">
 		<div class="col-md-8">
-		    @include('partials.navsub')
+			<div class="row" style="margin-top:20px;">
+				<div class="col-md-10">
+					<a href="/jobs"><- back to all jobs</a>
+				</div>
+				<div class="col-md-2 ml-auto float-right">
+					<a class="btn btn-outline-primary" href="{{ url('/jobs/create') }}" role="button">Add a Job</a>
+				</div>
+			</div>
 		    <div class="row justify-content-center">
 		        <div class="col-md-12">
-		            <h1 style="color:#ffffff;font-size:36px;font-weight:bold;">{{$company->name}}</h1>
+		            <h1 style="font-size:36px;font-weight:bold;">{{ $company->name }}</h1>
 		        </div>
 		    </div>
 		    <div class="row justify-content-center">

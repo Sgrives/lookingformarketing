@@ -49,7 +49,7 @@ class TypeController extends Controller
     {
         $type = Type::where('slug', '=', $slug)->firstOrFail();
         $jobs = Job::where('active', true)->where('type_id', '=', $type->id)->orderBy('updated_at', 'DESC')->get();
-        return view('jobtypes.show')->withType($type)->withJobs($jobs);
+        return view('jobs.jobtypes.show')->withType($type)->withJobs($jobs);
     }
 
     /**

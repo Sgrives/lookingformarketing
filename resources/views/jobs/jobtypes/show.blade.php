@@ -1,18 +1,23 @@
 @extends('layouts.app')
 
 @section('meta_info')
-    <title>{{$location->location}} Jobs | INeedMarketingHelp! Marketing Job Board</title>
-    <link rel="canonical" href="https://ineedmarketinghelp.com/location/{{$location->location_slug}}" />
-    <link rel="alternate" href="https://ineedmarketinghelp.com/location/{{$location->location_slug}}" hreflang="en-us" />
+    <title>LFM Jobs - {{ $type->name }}</title>
 @endsection
 
 @section('content')
-	<div class="row justify-content-center dark-bg">
+	<div class="row justify-content-center">
 		<div class="col-md-8">
-		    @include('partials.navsub')
+			<div class="row" style="margin-top:20px;">
+				<div class="col-md-10">
+					<a href="/jobs"><- back to all jobs</a>
+				</div>
+				<div class="col-md-2 ml-auto float-right">
+					<a class="btn btn-outline-primary" href="{{ url('/jobs/create') }}" role="button">Add a Job</a>
+				</div>
+			</div>
 		    <div class="row justify-content-center">
 		        <div class="col-md-12">
-		            <h1>{{$location->location}}</h1>
+		            <h1>{{ $type->name }}</h1>
 		        </div>
 		    </div>
 		    <div class="row justify-content-center">
@@ -24,7 +29,7 @@
 		            </ul>
 		        </div>
 		    </div>
-        </div>
-    </div>
+		</div>
+	</div>
 
 @endsection

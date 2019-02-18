@@ -3,9 +3,9 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Job::class, function (Faker $faker) {
-    return [
+	return [
 		'title'			=> $faker->name,
-        'slug'			=> str_random(10),
+		'slug'			=> str_random(10),
 		'company_id'	=> $faker->numberBetween($min = 1, $max = 50),
 		'category_id'	=> $faker->numberBetween($min = 1, $max = 50),
 		'type_id'		=> $faker->numberBetween($min = 1, $max = 50),
@@ -17,5 +17,5 @@ $factory->define(App\Job::class, function (Faker $faker) {
 		'description' 	=> $faker->paragraph,
 		'active' 		=> 1,
 		'updated_at' 	=> $faker->dateTimeThisYear($max = 'now', $timezone = null),
-    ];
+	];
 });

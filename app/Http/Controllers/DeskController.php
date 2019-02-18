@@ -49,7 +49,7 @@ class DeskController extends Controller
     {
         $desk = Desk::where('slug', '=', $slug)->firstOrFail();
         $jobs = Job::where('active', true)->where('desk_id', '=', $desk->id)->orderBy('updated_at', 'DESC')->get();
-        return view('desks.show')->withDesk($desk)->withJobs($jobs);
+        return view('jobs.desks.show')->withDesk($desk)->withJobs($jobs);
     }
 
     /**

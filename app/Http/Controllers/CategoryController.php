@@ -49,7 +49,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('slug', '=', $slug)->firstOrFail();
         $jobs = Job::where('active', true)->where('category_id', '=', $category->id)->orderBy('updated_at', 'DESC')->get();
-        return view('categories.show')->withCategory($category)->withJobs($jobs);
+        return view('jobs.categories.show')->withCategory($category)->withJobs($jobs);
     }
 
     /**

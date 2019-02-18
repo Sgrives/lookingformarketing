@@ -49,7 +49,7 @@ class CompanyController extends Controller
     {
         $company = Company::where('slug', '=', $slug)->firstOrFail();
         $jobs = Job::where('active', true)->where('company_id', '=', $company->id)->orderBy('updated_at', 'DESC')->get();
-        return view('companies.show')->withCompany($company)->withJobs($jobs);
+        return view('jobs.companies.show')->withCompany($company)->withJobs($jobs);
     }
 
     /**

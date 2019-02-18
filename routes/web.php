@@ -14,11 +14,11 @@ Route::get('/jobs/create/thankyou/{record}', 'JobController@thankyou')->name('jo
 Route::post('/jobs/purchased/{record}', 'JobController@purchased')->name('jobs.purchased');
 Route::resource('jobs', 'JobController');
 
-Route::get('/company/{slug}', 'CompanyController@show')->name('company.show');
-Route::get('/category/{category}', 'CategoryController@show')->name('category.show');
-Route::get('/type/{type}', 'TypeController@show')->name('type.show');
-Route::get('/desk/{desk}', 'DeskController@show')->name('desk.show');
-Route::get('/location/{location}', 'LocationController@show')->name('location.show');
+Route::get('jobs/company/{slug}', 'CompanyController@show')->name('company.show');
+Route::get('jobs/category/{category}', 'CategoryController@show')->name('category.show');
+Route::get('jobs/type/{type}', 'TypeController@show')->name('type.show');
+Route::get('jobs/desk/{desk}', 'DeskController@show')->name('desk.show');
+Route::get('jobs/location/{slug}', 'LocationController@show')->name('location.show');
 
 // Auth::routes();
 //
