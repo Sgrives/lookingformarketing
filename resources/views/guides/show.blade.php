@@ -14,16 +14,21 @@
 @endsection
 
 @section('content')
-	<div class="row justify-content-center dark-bg">
-		<div class="col-md-8 align-self-center white-bg">
+	<div class="row justify-content-center">
+		<div class="col-md-8 align-self-center">
+			@foreach ($guide->tags as $tag)
+				<strong class="d-inline-block mb-2 text-primary">{{ $tag->name }}</strong>
+			@endforeach
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-md-8 align-self-center">
 		    <div class="row">
 		        <div class="col-md-8">
-					<img src="{{ $guide->featured_image }}" class="img-fluid" alt="Responsive image">
-		            <img src="{{ $guide->author->avatar }}" alt="..." class="img-thumbnail">
                     <h1 style="color:#393E46;">{{ $guide->title }}</h1>
                     {!! $guide->body !!}
 		        </div>
-		    </div>
+			</div>
 		</div>
 	</div>
 @endsection

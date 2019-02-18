@@ -30,7 +30,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary">{{ $tag->name }}</strong>
                         <h3 class="mb-0">{{ $guide->title }}</h3>
-                        <div class="mb-1 text-muted">Nov 12</div>
+                        <div class="mb-1 text-muted">{{ date('m/d/Y', strtotime($guide->publish_date)) }}</div>
                         <p class="card-text mb-auto">{{ $guide->excerpt }}</p>
                         <a href="{{ url('/guides/'.$tag->slug.'/'.$guide->slug) }}" class="stretched-link">Continue reading</a>
                     </div>

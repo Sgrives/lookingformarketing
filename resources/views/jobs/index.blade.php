@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('meta_info')
-    <title>News</title>
-    <link rel="canonical" href="https://ineedmarketinghelp.com" />
-    <link rel="alternate" href="https://ineedmarketinghelp.com" hreflang="en-us" />
+    <title>LFM - Jobs</title>
+    <link rel="canonical" href="https://lookingformarketing.com/jobs" />
+    <link rel="alternate" href="https://lookingformarketing.com/jobs" hreflang="en-us" />
 @endsection
 
 @section('og')

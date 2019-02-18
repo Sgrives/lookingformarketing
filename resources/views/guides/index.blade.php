@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('meta_info')
-    <title>Guides</title>
-    <link rel="canonical" href="https://ineedmarketinghelp.com" />
-    <link rel="alternate" href="https://ineedmarketinghelp.com" hreflang="en-us" />
+    <title>LFM - Guides</title>
+    <link rel="canonical" href="https://lookingformarketing.com/guides" />
+    <link rel="alternate" href="https://lookingformarketing.com/guides" hreflang="en-us" />
 @endsection
 
 @section('og')
@@ -18,13 +18,14 @@
             @foreach ($guides as $guide)
                 @foreach ($guide->tags as $tag)
                     <div class="card" style="width: 18rem;">
-                        <img src="https://placeimg.com/1200/627/nature" class="card-img-top" alt="...">
+                        <img src="{{ $guide->featured_image }}" class="img-fluid" alt="Responsive image">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <a style="padding-left:0px;" href="{{ url('/guides/'.$tag->slug.'/'.$guide->slug) }}">{{ucfirst($guide->title)}}</a>
+                                <strong class="d-inline-block text-primary">{{ $tag->name }}</strong>
+                                <h3 class="mb-0">{{ $guide->title }}</h3>
                             </h5>
                             <p class="card-text">{{ $guide->excerpt }}</p>
-                            <a href="{{ url('/guides/'.$tag->slug.'/'.$guide->slug) }}" class="btn btn-primary">Go somewhere</a>
+                            <a href="{{ url('/guides/'.$tag->slug.'/'.$guide->slug) }}" class="stretched-link btn btn-primary">Read More</a>
                         </div>
                     </div>
                 @endforeach

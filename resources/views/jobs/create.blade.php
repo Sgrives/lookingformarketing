@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('meta_title')
-    | Create Job Ad
+@section('meta_info')
+    <title>Job Post Creation</title>
 @endsection
 
 @section('content')
 	<div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>CREATE YOUR JOB AD</h1>
+            <h1>CREATE YOUR JOB POST</h1>
         </div>
         {{-- <div class="col-md-4 ml-auto">
             <button type="button" class="btn btn-outline-success" style="margin-right:5px;"disabled>1. Create</button>
@@ -91,7 +91,7 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label for="job_desk">Remote or Onsite?</label>
+                <label for="job_desk">Remote or On-site?</label>
                 <select class="form-control{{ $errors->has('job_desk') ? ' is-invalid' : '' }}" id="job_desk" name="job_desk">
                         <option value="">Select</option>
                         @foreach ($desks as $desk)
@@ -178,7 +178,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <button type="submit" class="btn btn-primary btn-lg">Submit Job Ad</button>
+            <button type="submit" class="btn btn-primary btn-lg">Submit Job Post</button>
         </div>
     </div>
     </form>
