@@ -7,7 +7,7 @@
 @section('content')
 	<div class="row justify-content-center">
         <div class="col-md-8">
-            <h2>STEP 1: CREATE YOUR JOB AD</h2>
+            <h1>CREATE YOUR JOB AD</h1>
         </div>
         {{-- <div class="col-md-4 ml-auto">
             <button type="button" class="btn btn-outline-success" style="margin-right:5px;"disabled>1. Create</button>
@@ -15,12 +15,11 @@
             <button type="button" class="btn btn-outline-secondary" style="margin-right:5px;"disabled>3. Purchase</button>
         </div> --}}
     </div>
-    <hr>
     <div class="row justify-content-center" style="margin-top:20px;margin-bottom:40px;">
         <div class="col-md-8">
             {{-- <div><span class="badge badge-success">New!</span> Listings are subscription-based and are active until you've filled the position. Every 30 days you will be charged $149 and your listing will be moved back to the top of its category.</div> --}}
             <br>
-            <div><span class="badge badge-info" style="padding:5px;">Note:</span> Each listing can only be used to fill a single position and each post will be reviewed for approval. We'll contact you if your post is not approved. <b>Jobs are automatically removed after 4 months</b>.</div>
+            <div style="font-style: italic;"><span class="badge badge-secondary" style="padding:5px;">Note:</span> Each listing can only be used to fill a single position and each post will be reviewed for approval. We'll contact you if your post is not approved. <b>Jobs are automatically removed after 3 months</b>.</div>
         </div>
     </div>
     <form method="POST" action="{{route('jobs.store')}}">
@@ -110,7 +109,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="form-group">
-                <label for="job_description">Job Description <br><span class="badge badge-info" style=";">Note: Minimum of 100 characters</span></label>
+                <label for="job_description">Job Description <br><span class="badge badge-secondary" style="font-style: italic;">Note: Minimum of 100 characters</span></label>
                 <textarea name="job_description" name="job_description" id="job_description" rows="5" class="form-control{{$errors->has('job_description') ? ' is-invalid' : ''}}" placeholder="Tell us about the position.">{{old('job_description')}}</textarea>
                 @if ($errors->has('job_description'))
                     <span class="invalid-feedback">
@@ -167,7 +166,7 @@
                     <p>This is where we'll send a failed approval notice.</p>
                 </div>
                 <div class="form-group">
-                    <label for="company_description">Company Description <br><span class="badge badge-info" style=";">Note: Minimum of 100 characters</span></label>
+                    <label for="company_description">Company Description <br><span class="badge badge-secondary" style="font-style: italic;">Note: Minimum of 100 characters</span></label>
                     <textarea name="company_description" name="company_description" id="company_description" rows="5" class="form-control{{ $errors->has('company_description') ? ' is-invalid' : '' }}" placeholder="Your time to shine, tell us about your company, why should people be excited to work for you?">{{old('company_description')}}</textarea>
                     @if ($errors->has('company_description'))
                         <span class="invalid-feedback">
@@ -179,7 +178,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <button type="submit" class="btn btn-success btn-lg">Submit Job Ad</button>
+            <button type="submit" class="btn btn-primary btn-lg">Submit Job Ad</button>
         </div>
     </div>
     </form>

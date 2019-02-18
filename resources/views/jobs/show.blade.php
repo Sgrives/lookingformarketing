@@ -14,9 +14,16 @@
 @endsection
 
 @section('content')
-	<div class="row justify-content-center dark-bg" style="padding-top:20px;">
+	<div class="row justify-content-center" style="padding-top:20px;">
 		<div class="col-md-8 white-bg" style="padding:50px;margin-bottom:20px;border-top-left-radius: 0.25rem;border-top-right-radius: 0.25rem;">
-			@include('partials.navsub')
+		<div class="row" style="margin-top:20px;">
+			<div class="col-md-10">
+				<a href="/jobs"><- back to all jobs</a>
+			</div>
+			<div class="col-md-2 ml-auto float-right">
+				<a class="btn btn-outline-primary" href="{{url('/jobs/create')}}" role="button">Add a Job</a>
+			</div>
+		</div>
 		    <div class="row">
 		        <div class="col-md-12">
 		            <i>Posted: {{$job->updated_at->format('M d')}} | {{$job->type->name}} {{$job->category->name}}</i>
