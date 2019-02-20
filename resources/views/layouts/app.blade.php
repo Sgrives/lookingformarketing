@@ -62,11 +62,7 @@
 			</div>
 		</main>
 		<br>
-		<footer class="footer mt-auto pb-4">
-			<div class="container">
-				<span class="text-muted">&copy; <?php echo date("Y"); ?> Copyright.</span>
-			</div>
-		</footer>
+		@include('partials.footer')
 		@yield('foot_scripts')
 	</body>
 </html>
