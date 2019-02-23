@@ -15,9 +15,24 @@
 
 @section('content')
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Welcome to <b>Looking for Marketing...</b></h1>
-      <p class="lead">A collection of <b>guides</b>, <b>jobs</b>, and other <b>resources</b> to help you do better marketing.</p>
+    <div class="container ">
+        
+            <div class="spinny-wrapper">
+                <h1 class="display-4"><b>Looking for Marketing...</b>
+                    <div class="d-none d-lg-inline-block">
+                        <span class="spinny-words">
+                            <span>events</span>
+                            <span>communities</span>
+                            <span>resources</span>
+                            <span>guides</span>
+                            <span>freelancers</span>
+                            <span>jobs</span>
+                        </span>
+                    </div>
+                </h1>
+            </div>
+       
+      <p class="lead">A collection of <b><a href="/guides">guides</a></b>, <b><a href="/jobs">jobs</a></b>, and other <b><a href="">resources</a></b> to help you do better marketing.</p>
     </div>
   </div>
   <h2>Newest Guides</h2>
