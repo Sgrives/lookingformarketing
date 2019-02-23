@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Job;
+use App\Event;
 use App\Category;
 use Wink\WinkPost;
 use Illuminate\Http\Request;
@@ -18,8 +19,9 @@ class WelcomeController extends Controller
             ->simplePaginate(12);
             
         $jobs = Job::with('category')->where('active', true)->orderBy('updated_at', 'DESC')->limit(6)->get();
-        
-        return view('welcome')->withGuides($guides)->withJobs($jobs);
+        $events = Event::where('active', true)->orderBy('startdatetime', 'DESC')->limit(6)->get();
+
+        return view('welcome')->withGuides($guides)->withJobs($jobs)->withEvents($events);
     }
 
     public function subscribe()

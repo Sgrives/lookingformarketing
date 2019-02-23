@@ -30,8 +30,8 @@
 		<!-- Scripts -->
 		<script src="{{ asset('js/app.js') }}" defer></script>
 
+		@yield('head_styles')
 		@yield('head_scripts')
-		@yield('styles')
 
 		<!-- Fonts -->
 		<link rel="dns-prefetch" href="https://fonts.gstatic.com">

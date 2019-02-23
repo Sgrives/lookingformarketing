@@ -8,7 +8,7 @@
 
 @section('og')
     <meta property="og:title" content="lookingformarketing.com">
-    <meta property="og:description" content="The largest professional job board for marketers, digital marketers, graphic designers, web developers, and more.">
+    <meta property="og:description" content="">
     <meta property="og:url" content="https://lookingformarketing.com">
     <meta property="og:type" content="website">
 @endsection
@@ -32,7 +32,7 @@
                 </h1>
             </div>
        
-      <p class="lead">A collection of <b><a href="/guides">guides</a></b>, <b><a href="/jobs">jobs</a></b>, and other <b><a href="">resources</a></b> to help you do better marketing.</p>
+      <p class="lead">A collection of <b><a href="/guides">guides</a></b>, <b><a href="/jobs">jobs</a></b>, and other <b>resources</b> to help you do better marketing.</p>
     </div>
   </div>
   <h2>Newest Guides</h2>
@@ -61,18 +61,35 @@
   <br>
   <h2>Newest Job Posts</h2>
   <div class="row">
-        @foreach ($jobs as $job)
+	@foreach ($jobs as $job)
         <div class="col-sm-6 col-md-4 col-lg-2">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h3 class="card-title">
                         <a style="padding-left:0px;" href="{{ url('/jobs/'.$job->slug) }}">{{ $job->title }}</a>
-                    </h5>
+                    </h3>
                     <p class="card-text">{{ ucfirst($job->type->name) }}</p>
                     <a href="{{ url('/jobs/'.$job->slug) }}" class="btn btn-primary">View Job</a>
                 </div>
             </div>
         </div>
-        @endforeach
+	@endforeach
+</div>
+
+<br>
+<h2>Upcoming Events</h2>
+<div class="row">
+	@foreach ($events as $event)
+		<div class="col-sm-6 col-md-4 col-lg-2">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="card-title">{{ $event->name }}</h3>
+					<span class="">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>
+					<p class="card-text">{{ ucfirst($event->location) }}</p>
+					<a class="btn btn-primary stretched-link" href="{{ url('/events/'.$event->slug) }}">View Event</a>
+				</div>
+			</div>
+		</div>
+	@endforeach
 </div>
 @endsection

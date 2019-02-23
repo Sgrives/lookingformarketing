@@ -8,6 +8,10 @@ Route::get('/case-studies', 'CasestudyController@index')->name('casestudies');
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::view('help', 'pages.help');
 
+// Collections
+Route::view('books', 'collections.books');
+
+// Jobs
 Route::get('/jobs/create/preview/{record}', 'JobController@preview')->name('jobs.preview');
 Route::get('/jobs/create/purchase/{record}', 'JobController@purchase')->name('jobs.purchase');
 Route::get('/jobs/create/thankyou/{record}', 'JobController@thankyou')->name('jobs.thankyou');
@@ -20,6 +24,10 @@ Route::get('jobs/type/{type}', 'TypeController@show')->name('type.show');
 Route::get('jobs/desk/{desk}', 'DeskController@show')->name('desk.show');
 Route::get('jobs/location/{slug}', 'LocationController@show')->name('location.show');
 
-// Auth::routes();
-//
-// Route::get('/home', 'HomeController@index')->name('home');
+// Events
+Route::resource('events', 'EventController');
+
+// Auth
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

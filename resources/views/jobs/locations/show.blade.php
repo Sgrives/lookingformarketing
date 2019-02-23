@@ -30,6 +30,21 @@
 		        </div>
 		    </div>
         </div>
-    </div>
-
+	</div>
+	<br>
+	<h2>Upcoming Events in {{ ucfirst($location->location) }}</h2>
+	<div class="row">
+			@foreach ($events as $event)
+				<div class="col-sm-6 col-md-4 col-lg-2">
+					<div class="card">
+						<div class="card-body">
+							<h3 class="card-title">{{ $event->name }}</h3>
+							<span class="">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>
+							<br><br>
+							<a class="btn btn-primary stretched-link" href="{{ url('/events/'.$event->slug) }}">View Event</a>
+						</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
 @endsection

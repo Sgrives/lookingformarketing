@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Location;
 use App\Job;
+use App\Event;
+use App\Location;
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
@@ -49,7 +50,8 @@ class LocationController extends Controller
     {
         $location = Job::where('location_slug', '=', $slug)->firstOrFail();
         $jobs = Job::where('active', true)->where('location_slug', '=', $location->location_slug)->orderBy('updated_at', 'DESC')->get();
-        return view('jobs.locations.show')->withLocation($location)->withJobs($jobs);
+        $events = Event::where('location_slug', '=', $location->location_slug)->where('active', true)->get();
+        return view('jobs.locations.show')->withLocation($location)->withJobs($jobs)->withEvents($events);
     }
 
     /**

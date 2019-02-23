@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in! test
+                    <div>
+                        <h3>To-do:</h3>
+                        <ol>
+                            <li>Admin - Approve Events</li>
+                            <li>Admin - Approve Jobs</li>
+                        </ol>
+                    </div>
+
                 </div>
             </div>
         </div>
