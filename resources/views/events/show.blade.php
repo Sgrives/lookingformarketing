@@ -24,7 +24,7 @@
 		</div>
 		    <div class="row">
 		        <div class="col-md-12">
-		            <i><b>Location:</b> {{ $event->location }} | {{ $event->startdatetime->format('M d, Y @ ga') }} - {{ $event->enddatetime->format('M d, Y @ ga') }} | <b>Cost:</b> {{ $event->cost }}</i>
+		            <i><b>Location:</b> {{ $event->location }} | {{ $event->startdatetime->format('M d, Y @ ga') }} - {{ $event->enddatetime->format('M d, Y @ ga') }} | <b>Cost:</b> {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}</i>
 		            <h1 style="color:#393E46;">{{ $event->name }}</h1>
 		            <h4 style="color:#546E7A"></h4>
 		        </div>

@@ -38,7 +38,7 @@
 							<ul class="list-group">
 							@foreach ($events as $event)
 								<li class="list-group-item" style="margin:1px 0;">
-									{{ $event->url }} | ${{ $event->cost }}
+									{{ $event->url }} | {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}
 									<h2>
 										<a class="stretched-link" href="{{ url('events/'.$event->slug) }}">{{ $event->name }}</a>
 										<span class="float-right">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>

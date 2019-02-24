@@ -65,11 +65,9 @@
         <div class="col-sm-6 col-md-4 col-lg-2">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">
-                        <a style="padding-left:0px;" href="{{ url('/jobs/'.$job->slug) }}">{{ $job->title }}</a>
-                    </h3>
+                    <h3 class="card-title">{{ $job->title }}</h3>
                     <p class="card-text">{{ ucfirst($job->type->name) }}</p>
-                    <a href="{{ url('/jobs/'.$job->slug) }}" class="btn btn-primary">View Job</a>
+                    <a class="btn btn-primary stretched-link" href="{{ url('/jobs/'.$job->slug) }}">View Job</a>
                 </div>
             </div>
         </div>
@@ -85,7 +83,7 @@
 				<div class="card-body">
 					<h3 class="card-title">{{ $event->name }}</h3>
 					<span class="">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>
-					<p class="card-text">{{ ucfirst($event->location) }}</p>
+					<p class="card-text">{{ ucfirst($event->location) }} | {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}</p>
 					<a class="btn btn-primary stretched-link" href="{{ url('/events/'.$event->slug) }}">View Event</a>
 				</div>
 			</div>
