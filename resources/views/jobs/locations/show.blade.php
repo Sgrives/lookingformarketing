@@ -38,10 +38,10 @@
 				<div class="col-sm-6 col-md-4 col-lg-2">
 					<div class="card">
 						<div class="card-body">
-							<h3 class="card-title">{{ $event->name }}</h3>
-							<span class="">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>
-							<br><br>
-							<a class="btn btn-primary stretched-link" href="{{ url('/events/'.$event->slug) }}">View Event</a>
+								<h3 class="card-title">{{ $event->name }}</h3>
+								<span class="">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>
+								<p class="card-text">{{ ucfirst($event->location) }} | {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}</p>
+								<a class="btn btn-primary stretched-link" href="{{ url('/events/'.$event->slug) }}">View Event</a>
 						</div>
 					</div>
 				</div>

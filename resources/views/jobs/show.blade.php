@@ -24,9 +24,8 @@
 		</div>
 		    <div class="row">
 		        <div class="col-md-12">
-		            <i>Posted: {{ $job->updated_at->format('M d') }} | {{ $job->type->name }} {{ $job->category->name }}</i>
+		            <i>Posted: {{ $job->updated_at->format('M d') }} | {{ $job->type->name }} | {{ $job->category->name }}</i>
 		            <h1 style="color:#393E46;">{{ $job->title }}</h1>
-		            <h4 style="color:#546E7A"></h4>
 		        </div>
 		    </div>
 		    <div class="row">

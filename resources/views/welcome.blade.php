@@ -46,7 +46,7 @@
                         <strong class="d-inline-block mb-2 text-primary">{{ $tag->name }}</strong>
                         <h3 class="mb-0">{{ $guide->title }}</h3>
                         <div class="mb-1 text-muted">{{ date('m/d/Y', strtotime($guide->publish_date)) }}</div>
-                        <p class="card-text mb-auto">{{ $guide->excerpt }}</p>
+                        <p class="card-text">{{ str_limit($guide->excerpt, $limit = 75, $end = '... Read More') }}</p>
                         <a href="{{ url('/guides/'.$tag->slug.'/'.$guide->slug) }}" class="stretched-link">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block guide">

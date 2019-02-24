@@ -30,7 +30,7 @@
                                 <strong class="d-inline-block text-primary">{{ $tag->name }}</strong>
                                 <h3 class="mb-0">{{ $guide->title }}</h3>
                             </h5>
-                            <p class="card-text">{{ $guide->excerpt }}</p>
+                            <p class="card-text">{{ str_limit($guide->excerpt, $limit = 40, $end = '... Read More') }}</p>
                             <a href="{{ url('/guides/'.$tag->slug.'/'.$guide->slug) }}" class="stretched-link btn btn-primary">Read More</a>
                         </div>
                     </div>
