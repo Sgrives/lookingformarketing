@@ -15,16 +15,14 @@
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
 			<h1 class="display-4">Looking for Marketing <b>Events</b></h1>
-			<p class="lead">A collection of <b>events</b> to go somewhere new.</p>
+            <p class="lead">A collection of <b>events</b> to go somewhere new.</p>
+            <div class="float-right">
+                <a class="btn btn-outline-primary" href="{{ url('/events/create') }}" role="button">Submit an Event</a>
+            </div>
 		</div>
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-md-8">
-			<div class="row" style="margin-top:20px;">
-				<div class="col-md-2 ml-auto float-right">
-					<a class="btn btn-outline-primary" href="{{ url('/events/create') }}" role="button">Submit an Event</a>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-md-12">
 

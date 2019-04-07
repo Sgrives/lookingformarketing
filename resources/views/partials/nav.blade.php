@@ -20,6 +20,9 @@
 			<li class="nav-item @if (Request::is('events*')) active @endif">
 				<a class="nav-link" href="{{url('events')}}">Events</a>
 			</li>
+			<li class="nav-item @if (Request::is('books*')) active @endif">
+				<a class="nav-link" href="{{url('books')}}">Books</a>
+			</li>
 			{{-- <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Collections

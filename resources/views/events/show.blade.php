@@ -5,7 +5,7 @@
 @endsection
 
 @section('og')
-    <meta property="og:title" content="{{ $event->name }} | lookingformarketing.com Job Board">
+    <meta property="og:title" content="{{ $event->name }} | lookingformarketing.com">
     <meta property="og:description" content="{{ ucfirst($event->location) }} - {{ $event->description }}">
     <meta property="og:url" content="https://lookingformarketing.com/jobs/{{ $event->slug }}">
     <meta property="og:type" content="website">

@@ -90,7 +90,7 @@ class EventController extends Controller
     public function show($slug)
     {
         $event = Event::where('active', true)->where('slug', '=', $slug)->firstOrFail();
-        return view('events.show')->withevent($event);
+        return view('events.show')->withEvent($event);
     }
 
     /**

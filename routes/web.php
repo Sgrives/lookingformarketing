@@ -4,12 +4,13 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('/subscribe', 'WelcomeController@subscribe')->name('subscribe');
 Route::get('/guides', 'GuideController@index')->name('guides');
 Route::get('/guides/{tag}/{slug}', 'GuideController@show');
+Route::get('/guides/{tag}', 'TagController@index');
 Route::get('/case-studies', 'CasestudyController@index')->name('casestudies');
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::view('help', 'pages.help');
 
-// Collections
-Route::view('books', 'collections.books');
+// Books
+Route::resource('books', 'BookController');
 
 // Jobs
 Route::get('/jobs/create/preview/{record}', 'JobController@preview')->name('jobs.preview');
