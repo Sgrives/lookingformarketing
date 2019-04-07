@@ -33,6 +33,8 @@
         <p class="lead">A collection of <b><a href="/guides">guides</a></b>, <b><a href="/jobs">jobs</a></b>, and other <b>resources</b> to help you do better marketing.</p>
         </div>
     </div>
+
+    @if(!$guides->isEmpty())
     <h2>Newest Guides</h2>
     <div class="row mb-2">
         @foreach ($guides as $guide)
@@ -54,6 +56,9 @@
             @endforeach
         @endforeach
     </div>
+    @endempty
+
+    @if(!$jobs->isEmpty())
     <br>
     <h2>Newest Job Posts</h2>
     <div class="row">
@@ -69,6 +74,9 @@
             </div>
         @endforeach
     </div>
+    @endempty
+
+    @if(!$events->isEmpty())
     <br>
     <h2>Upcoming Events</h2>
     <div class="row">
@@ -85,6 +93,9 @@
             </div>
         @endforeach
     </div>
+    @endempty
+
+    @if(!$books->isEmpty())
     <br>
     <h2>Newest Book Recommendations</h2>
     <div class="row">
@@ -101,4 +112,6 @@
             </div>
         @endforeach
     </div>
+    @endempty
+    
 @endsection
