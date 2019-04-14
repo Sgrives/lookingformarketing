@@ -16,7 +16,7 @@
 			<h1 class="display-4">Looking for Marketing <b>Jobs</b></h1>
 			<p class="lead">A collection of <b>jobs</b> to help find something new.</p>
 			<div class="float-right">
-				<a class="btn btn-outline-primary" href="{{ url('/jobs/create') }}" role="button">Add a Job</a>
+				<a class="btn btn-outline-primary" href="{{ url('/jobs/create') }}" role="button">Submit a Job</a>
 			</div>
 		</div>
 	</div>
