@@ -35,7 +35,7 @@
     </div>
 
     @if(!$guides->isEmpty())
-    <h2>Newest Guides</h2>
+    <h2>Marketing Guides</h2>
     <div class="row mb-2">
         @foreach ($guides as $guide)
             @foreach ($guide->tags as $tag)
@@ -60,7 +60,7 @@
 
     @if(!$jobs->isEmpty())
     <br>
-    <h2>Newest Job Posts</h2>
+    <h2>Marketing Job Posts</h2>
     <div class="row">
         @foreach ($jobs as $job)
             <div class="col-sm-6 col-md-4 col-lg-2">
@@ -79,7 +79,7 @@
 
     @if(!$events->isEmpty())
     <br>
-    <h2>Upcoming Events</h2>
+    <h2>Upcoming Marketing Events</h2>
     <div class="row">
         @foreach ($events as $event)
             <div class="col-sm-6 col-md-4 col-lg-2">
@@ -98,7 +98,7 @@
 
     @if(!$books->isEmpty())
     <br>
-    <h2>Newest Book Recommendations</h2>
+    <h2>Marketing Book Recommendations</h2>
     <div class="row">
         @foreach ($books as $book)
             <div class="col-sm-6 col-md-4 col-lg-2">

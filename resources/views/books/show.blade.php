@@ -32,7 +32,7 @@
                     <h4 style="color:#546E7A"></h4>
                     @empty (!$book->description)
                         <h3>Description</h3>
-                        {{ $book->description }}
+                        {!! $book->description !!}
                     @endempty
 		        </div>
 		    </div>
