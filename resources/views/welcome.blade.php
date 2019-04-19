@@ -67,7 +67,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">{{ $job->title }}</h4>
-                        <p class="card-text">{{ ucfirst($job->type->name) }}</p>
+                        <p class="card-text">{{ ucfirst($job->location) }} / {{ ucfirst($job->type->name) }} / {{ ucfirst($job->category->name) }}</p>
                         <a class="btn btn-primary stretched-link" href="{{ url('/jobs/'.$job->slug) }}">View Job</a>
                     </div>
                 </div>
