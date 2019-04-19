@@ -17,7 +17,7 @@
 			<h1 class="display-4">Looking for Marketing <b>Events</b></h1>
             <p class="lead">A collection of <b>events</b> to go somewhere new.</p>
             <div class="float-right">
-                <a class="btn btn-outline-primary" href="{{ url('/events/create') }}" role="button">Submit an Event</a>
+                <a class="btn btn-outline-primary d-none d-sm-block" href="{{ url('/events/create') }}" role="button">Submit an Event</a>
             </div>
 		</div>
 	</div>
@@ -25,27 +25,23 @@
 		<div class="col-md-8">
 			<div class="row">
 				<div class="col-md-12">
-
 					@foreach($eventgroups as $eventgroups=>$events)
 						<br>
-							@foreach($locations as $location)
-								@if($eventgroups == $location->slug)
-									<b>{{ $location->name }}</b>
-								@endif
-							@endforeach
-							<ul class="list-group">
-							@foreach ($events as $event)
-								<li class="list-group-item" style="margin:1px 0;">
-									{{ $event->url }} | {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}
-									<h2>
-										<a class="stretched-link" href="{{ url('events/'.$event->slug) }}">{{ $event->name }}</a>
-										<span class="float-right">{{ $event->startdatetime->format('M, d') }} - {{ $event->enddatetime->format('M, d') }}</span>
-										<div class="small text-muted">
-											{{ str_limit($event->description, $limit = 75, $end = '... Read More') }}
-										</div>
-									</h2>
-								</li>
-							@endforeach
+						<b>{{ $eventgroups }}</b>
+						<ul class="list-group">
+						@foreach ($events as $event)
+							<li class="list-group-item" style="margin:1px 0;">
+								Price: <b>{{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}</b>
+										<h2>
+											<a class="stretched-link" href="{{ url('events/'.$event->slug) }}">{{ $event->name }}</a>
+											{{ $event->startdatetime->format('d') === $event->enddatetime->format('d') ? $event->startdatetime->format('M, d') : $event->startdatetime->format('M, d')." - ".$event->enddatetime->format('M, d') }}
+										</h2>
+								
+								<div class="text-muted">
+									{{ str_limit($event->description, $limit = 100, $end = '... Read More') }}
+								</div>
+							</li>
+						@endforeach
 						</ul>
 					@endforeach
 

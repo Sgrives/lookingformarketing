@@ -20,7 +20,7 @@
             <h1 class="display-4">Looking for Marketing <b>Books</b></h1>
             <p class="lead">A collection of <b>books</b> to help you do better marketing.</p>
             <div class="float-right">
-                <a class="btn btn-outline-primary" href="{{ url('/books/create') }}" role="button">Submit a Book</a>
+                <a class="btn btn-outline-primary d-none d-sm-block" href="{{ url('/books/create') }}" role="button">Submit a Book</a>
             </div>
         </div>
     </div>

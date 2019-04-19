@@ -54,14 +54,15 @@
 			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<!-- End Google Tag Manager (noscript) -->
 		@endif
-
-		<main role="main" class="flex-shrink-0">
-			<div class="container-fluid">
-				@include('partials.nav')
-				@yield('content')
-			</div>
-		</main>
-		<br>
+		<div class="wrapper">
+			<main role="main" class="flex-shrink-0">
+				<div class="container-fluid">
+					@include('partials.nav')
+					@yield('content')
+				</div>
+			</main>
+			<br>
+		</div>
 		@include('partials.footer')
 		@yield('foot_scripts')
 	</body>

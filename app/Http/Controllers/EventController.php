@@ -16,10 +16,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::where('active', true)->get();
+        $events = Event::where('active', true)->orderBy('location', 'asc')->get();
         $eventgroups = $events->groupBy('location');
-        $locations = Location::get();
-        return view('events/index')->withEventgroups($eventgroups)->withLocations($locations);
+        return view('events/index')->withEventgroups($eventgroups);
     }
 
     /**

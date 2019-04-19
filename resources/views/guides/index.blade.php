@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-2">
 
-            @foreach ($guides as $guide)
+            {{-- @foreach ($guides as $guide)
                 @foreach ($guide->tags as $tag)
                     <div class="card" style="width: 18rem;">
                         <img src="{{ $guide->featured_image }}" class="img-fluid" alt="Guide Name - {{ $guide->title }}">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 @endforeach
-            @endforeach
+            @endforeach --}}
 
         </div>
     </div>

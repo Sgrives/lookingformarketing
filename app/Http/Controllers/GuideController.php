@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Guide;
-use Wink\WinkPost;
 use Illuminate\Http\Request;
 
 class GuideController extends Controller
@@ -15,12 +14,7 @@ class GuideController extends Controller
      */
     public function index()
     {
-		$guides = WinkPost::with('tags')
-            ->live()
-            ->orderBy('publish_date', 'DESC')
-            ->simplePaginate(12);
-        // dd($guides);
-		return view('guides/index')->withGuides($guides);
+		return view('guides/index');
     }
 
     /**

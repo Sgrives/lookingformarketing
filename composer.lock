@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b438c37a854d61dbf9906801727d6ed0",
+    "content-hash": "16de03a605c0b2eddc375483c4ef7a07",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3542,58 +3542,6 @@
                 "environment"
             ],
             "time": "2019-01-29T11:11:52+00:00"
-        },
-        {
-            "name": "writingink/wink",
-            "version": "v0.0.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/writingink/wink.git",
-                "reference": "f19afd6157b09b5835d1e4f52d54260ad27549d7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/writingink/wink/zipball/f19afd6157b09b5835d1e4f52d54260ad27549d7",
-                "reference": "f19afd6157b09b5835d1e4f52d54260ad27549d7",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "~5.7",
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "nunomaduro/larastan": "^0.3.8"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Wink\\WinkServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Wink\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mohamed Said",
-                    "email": "mohamed@laravel.com"
-                }
-            ],
-            "description": "Wink Publishing Framework.",
-            "keywords": [
-                "blog",
-                "framework",
-                "laravel"
-            ],
-            "time": "2019-03-07T11:10:17+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",

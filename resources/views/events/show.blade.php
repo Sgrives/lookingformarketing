@@ -14,27 +14,31 @@
 @section('content')
 	<div class="row justify-content-center" style="padding-top:20px;">
 		<div class="col-md-8" style="margin-bottom:20px;">
-		<div class="row" style="margin-top:20px;">
-			<div class="col-md-10">
-				<a href="/events"><- back to all events</a>
+			<div class="row">
+				<div class="col-md-12">
+					<h1 style="color:#393E46;">{{ $event->name }}</h1>
+					<i>
+						<b>Location:</b> {{ $event->location }} | 
+						<b>Date:</b> {{ $event->startdatetime->format('M d, Y @ ga') }} - {{ $event->enddatetime->format('M d, Y @ ga') }} | 
+						<b>Cost:</b> {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}
+					</i>
+				</div>
 			</div>
-			<div class="col-md-2 ml-auto float-right">
-				<a class="btn btn-outline-primary" href="{{ url('/events/create') }}" role="button">Submit an Event</a>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Description</h4>
+					{!! $event->description !!}
+				</div>
 			</div>
-		</div>
-		    <div class="row">
-		        <div class="col-md-12">
-		            <i><b>Location:</b> {{ $event->location }} | {{ $event->startdatetime->format('M d, Y @ ga') }} - {{ $event->enddatetime->format('M d, Y @ ga') }} | <b>Cost:</b> {{ $event->cost === "Free" ? $event->cost : "$".$event->cost }}</i>
-		            <h1 style="color:#393E46;">{{ $event->name }}</h1>
-		            <h4 style="color:#546E7A"></h4>
-		        </div>
-		    </div>
-		    <div class="row">
-		        <div class="col-md-12">
-		            <h3>Description</h3>
-		            {{ $event->description }}
-		        </div>
-		    </div>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="float-left">
+						<a class="btn btn-primary" href="{{ url($event->url) }}/?utm_source=lookingformarketing&utm_medium=events&utm_campaign=referral" target="_blank" role="button">Visit Event Website</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 @endsection

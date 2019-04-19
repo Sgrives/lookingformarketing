@@ -4,16 +4,10 @@ html {
 }
 body {
 	color: #212529;
-	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 
 .footer {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
-	height: 60px; /* Set the fixed height of the footer here */
-	line-height: 60px; /* Vertically center the text there */
-	background-color: #f5f5f5;
 }
 
 .card-columns {
@@ -23,4 +17,12 @@ body {
 	@include media-breakpoint-only(xl) {
 		column-count: 6;
 	}
+}
+
+.jumbotron-fluid {
+	border-radius: 5px;
+}
+.list-group-item:first-child {
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
