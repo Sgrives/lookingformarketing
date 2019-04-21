@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Event;
 use App\Location;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -16,9 +17,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::where('active', true)->orderBy('location', 'asc')->get();
+        $events = Event::where('active', true)->whereBetween('startdatetime', [Carbon::now(), Carbon::now()->addMonths(3)])->orderBy('location', 'asc')->get();
         $eventgroups = $events->groupBy('location');
-        return view('events/index')->withEventgroups($eventgroups);
+        $pastevents = Event::where('active', true)->where('startdatetime', '<', Carbon::now())->orderBy('location', 'asc')->get();
+        $pasteventgroups = $pastevents->groupBy('location');
+        return view('events/index')->withEventgroups($eventgroups)->withPasteventgroups($pasteventgroups);
     }
 
     /**

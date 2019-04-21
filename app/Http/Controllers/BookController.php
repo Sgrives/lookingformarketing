@@ -55,7 +55,6 @@ class BookController extends Controller
         $book->slug = preg_replace("/[^a-zA-Z0-9\/_|+ -]/", '', $book->slug);
         $book->slug = preg_replace("/[\/_|+ -]+/", $delimiter, $book->slug);
         $book->slug = strtolower(trim($book->slug, $delimiter));
-        $book->slug = $book->slug.'-'.str_random(4).''.\Carbon\Carbon::now()->hour.''.str_random(4);
         $book->save();
 
         Session::flash('success', 'Book Submitted');

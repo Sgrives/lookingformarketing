@@ -32,7 +32,7 @@
 		    </div>
 		    <div class="row">
 		        <div class="col-md-12">
-		            <a href="{{ $job->company->url }}" target="_blank">{{ $job->company->url }}</a>
+		            <a href="{{ $job->company->url }}/?utm_source=lookingformarketing&utm_medium=jobs&utm_campaign=referral" target="_blank">{{ $job->company->url }}</a>
 		        </div>
 		    </div>
 		    <br>
