@@ -77,7 +77,9 @@
         <div class="col-md-8">
             <div class="form-group">
                 <label for="body">Body</label>
-                <textarea rows="10" id="body" class="editable medium-editor-textarea" name="body"></textarea>
+                <textarea rows="10" id="body" class="editable medium-editor-textarea" name="body">
+                    {{ old('body') }}
+                </textarea>
                 @if ($errors->has('body'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('body') }}</strong>
