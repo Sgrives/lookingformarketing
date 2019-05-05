@@ -56,7 +56,7 @@
 		@endif
 		<div class="wrapper">
 			<main role="main" class="flex-shrink-0">
-				<div class="container-fluid">
+				<div id="content" class="container-fluid">
 					@include('partials.nav')
 					@yield('content')
 				</div>

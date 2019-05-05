@@ -10870,3 +10870,11 @@ body {
   border-top-right-radius: 5px;
 }
 
+.invalid-feedback {
+  display: block;
+}
+
+#content ul li {
+  margin: 10px 0px;
+}
+

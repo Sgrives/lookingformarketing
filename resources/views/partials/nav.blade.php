@@ -11,9 +11,9 @@
 			{{-- <li class="nav-item @if (Request::is('help')) active @endif">
 				<a class="nav-link" href="{{url('help')}}">Help</a>
 			</li> --}}
-			{{-- <li class="nav-item @if (Request::is('guides*')) active @endif">
+			<li class="nav-item @if (Request::is('guides*')) active @endif">
 				<a class="nav-link" href="{{url('guides')}}">Guides</a>
-			</li> --}}
+			</li>
 			<li class="nav-item @if (Request::is('jobs*')) active @endif">
 				<a class="nav-link" href="{{url('jobs')}}">Jobs</a>
 			</li>
@@ -43,12 +43,13 @@
 		</ul>
 		<ul class="navbar-nav ml-auto">
 			@guest
-				<span class="text-muted float-right">Visit our communities on Reddit - 
+				<span class="text-muted float-right d-none d-xl-block">Visit our communities on Reddit - 
 					<a href="https://www.reddit.com/r/marketing" target="_blank">Marketing</a>, 
 					<a href="https://www.reddit.com/r/advertising" target="_blank">Advertising</a>, 
 					<a href="https://www.reddit.com/r/socialmedia" target="_blank">Social Media</a>, 
 					<a href="https://www.reddit.com/r/digital_marketing" target="_blank">Digital Marketing</a>, and 
-					<a href="https://www.reddit.com/r/analytics" target="_blank">Analytics</a></span>
+					<a href="https://www.reddit.com/r/analytics" target="_blank">Analytics</a>
+				</span>
 			@else
 				<li class="nav-item">
 					<a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>

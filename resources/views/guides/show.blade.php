@@ -2,23 +2,23 @@
 
 @section('meta_info')
     <title>LFM Guides - {{ $guide->title }}</title>
-    <link rel="canonical" href="https://lookingformarketing.com/guides/{{ $guide->slug }}" />
-    <link rel="alternate" href="https://lookingformarketing.com/guides/{{ $guide->slug }}" hreflang="en-us" />
+    <link rel="canonical" href="https://lookingformarketing.com/guide/on/{{ $guide->slug }}" />
+    <link rel="alternate" href="https://lookingformarketing.com/guide/on/{{ $guide->slug }}" hreflang="en-us" />
 @endsection
 
 @section('og')
     <meta property="og:title" content="LFM Guides - {{ $guide->title }}">
-    <meta property="og:description" content="{{ $guide->description }}">
-    <meta property="og:url" content="https://lookingformarketing.com/guides/{{ $guide->slug }}">
+    <meta property="og:description" content="{{ $guide->preface }}">
+    <meta property="og:url" content="https://lookingformarketing.com/guide/on/{{ $guide->slug }}">
     <meta property="og:type" content="website">
 @endsection
 
 @section('content')
 	<div class="row justify-content-center">
 		<div class="col-md-8 align-self-center">
-			@foreach ($guide->tags as $tag)
-				<strong class="d-inline-block mb-2 text-primary"><a href="/guides/{{ $tag->slug }}">{{ $tag->name }}</a></strong>
-			@endforeach
+			<strong class="d-inline-block mb-2 text-primary">
+				{{ $guide->category->name }}
+			</strong>
 		</div>
 	</div>
 	<div class="row justify-content-center">
