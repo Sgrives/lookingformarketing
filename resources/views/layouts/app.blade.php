@@ -2,13 +2,11 @@
 <html lang="{{ app()->getLocale() }}">
 	<head>
 		@if (App::environment('production'))
-			<!-- Google Tag Manager -->
 			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 			})(window,document,'script','dataLayer','GTM-TJ5V28R');</script>
-			<!-- End Google Tag Manager -->
 		@endif
 
 		<meta charset="utf-8">
@@ -24,35 +22,18 @@
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
-		<!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<!-- Scripts -->
-		<script src="{{ asset('js/app.js') }}" defer></script>
-
-		@yield('head_styles')
-		@yield('head_scripts')
-
-		<!-- Fonts -->
 		<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-
-		<!-- Styles -->
 		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-		<style>
-			.guide img {
-				object-fit: cover;
-				width: 400px;
-				height: 250px;
-			}
-		</style>
+		@yield('head_styles')
+		@yield('head_scripts')
 	</head>
 	<body class="d-flex flex-column h-100">
 		@if (App::environment('production'))
-			<!-- Google Tag Manager (noscript) -->
 			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ5V28R"
 			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-			<!-- End Google Tag Manager (noscript) -->
 		@endif
 		<div class="wrapper">
 			<main role="main" class="flex-shrink-0">
@@ -64,6 +45,7 @@
 			<br>
 		</div>
 		@include('partials.footer')
+		<script src="{{ asset('js/app.js') }}" defer></script>
 		@yield('foot_scripts')
 	</body>
 </html>
