@@ -15,6 +15,13 @@
                     @endif
 
                     <div>
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="{{ route('guides.index') }}">Guides</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
                         <h3>To-do:</h3>
                         <ol>
                             <li>Admin - Approve Events</li>

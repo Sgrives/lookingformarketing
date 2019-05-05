@@ -11,7 +11,7 @@
 			{{-- <li class="nav-item @if (Request::is('help')) active @endif">
 				<a class="nav-link" href="{{url('help')}}">Help</a>
 			</li> --}}
-			<li class="nav-item @if (Request::is('guides*')) active @endif">
+			<li class="nav-item @if (Request::is('guides*') || Request::is('guide*')) active @endif">
 				<a class="nav-link" href="{{url('guides')}}">Guides</a>
 			</li>
 			<li class="nav-item @if (Request::is('jobs*')) active @endif">

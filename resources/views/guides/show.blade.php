@@ -23,12 +23,19 @@
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-md-8 align-self-center">
-		    <div class="row">
-		        <div class="col-md-8">
-                    <h1 style="color:#393E46;">{{ $guide->title }}</h1>
-                    {!! $guide->body !!}
-		        </div>
+			<div class="row">
+				<div class="col-md-8">
+					<h1 style="color:#393E46;">{{ $guide->title }}</h1>
+					{!! $guide->body !!}
+				</div>
 			</div>
 		</div>
 	</div>
+	{{-- <div class="row justify-content-center">
+		<div class="col-md-8 align-self-center">
+			<div class="jumbotron">
+				
+			</div>
+		</div>
+	</div> --}}
 @endsection

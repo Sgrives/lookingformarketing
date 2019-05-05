@@ -6,6 +6,7 @@ use Auth;
 use Session;
 use App\Guide;
 use App\Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GuideController extends Controller
@@ -130,8 +131,11 @@ class GuideController extends Controller
      * @param  \App\Guide  $guide
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Guide $guide)
+    public function destroy($slug)
     {
-        //
+        $guide = Guide::where('slug', '=', $slug)->firstOrFail();
+        $guide->delete();
+
+        return redirect()->route('guides.index');
     }
 }

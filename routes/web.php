@@ -31,9 +31,8 @@ Route::get('/guide/on/{slug}', 'GuidePublicController@show')->name('public.guide
 // Auth
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 // Admin Resources
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('guides', 'GuideController');
+    Route::get('home', 'HomeController@index')->name('home');
 });
