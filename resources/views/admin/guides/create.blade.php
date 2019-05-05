@@ -12,7 +12,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>ADD GUIDE</h1>
+            <h1>Create Guide</h1>
         </div>
     </div>
     <hr>
@@ -88,8 +88,9 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center" style="margin-top:300px;">
+    <div class="row justify-content-center">
         <div class="col-md-8">
+            <a href="{{ route('guides.index') }}" class="btn btn-light btn-sm">Cancel</a>
             <button type="submit" class="btn btn-secondary btn-sm">Save</button>
         </div>
     </div>

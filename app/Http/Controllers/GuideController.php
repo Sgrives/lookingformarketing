@@ -64,7 +64,7 @@ class GuideController extends Controller
         $guide->body = $request->body;
         $guide->save();
 
-        Session::flash('status', 'Guide Save');
+        Session::flash('status', 'Guide Created');
         return redirect('/admin/guides');
 
     }
@@ -75,10 +75,10 @@ class GuideController extends Controller
      * @param  \App\Guide  $guide
      * @return \Illuminate\Http\Response
      */
-    public function show($tag, $slug)
+    public function show($slug)
     {
-        $guide = WinkPost::where('slug', '=', $slug)->firstOrFail();
-        return view('guides.show')->withGuide($guide);
+        $guide = Guide::where('slug', '=', $slug)->firstOrFail();
+        return view('admin.guides.show')->withGuide($guide);
     }
 
     /**
@@ -121,7 +121,6 @@ class GuideController extends Controller
         $guide->save();
 
         Session::flash('status', 'Guide Updated');
-
         return redirect()->route('guides.index');
     }
 
@@ -136,6 +135,7 @@ class GuideController extends Controller
         $guide = Guide::where('slug', '=', $slug)->firstOrFail();
         $guide->delete();
 
+        Session::flash('status', 'Guide Deleted');
         return redirect()->route('guides.index');
     }
 }
