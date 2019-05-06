@@ -6,10 +6,9 @@
 
 @section('content')
 	<div class="row justify-content-center">
-		<div class="col-md-8 align-self-center">
+		<div class="col-md-8 align-self-center small">
 			<strong class="d-inline-block mb-2 text-primary">
-				Admin Preview - {{ $guide->category->name }}
-			</strong>
+				Admin Preview - {{ $guide->category->name }}</strong> |  <em>Updated {{ $guide->updated_at->format('m-d-Y') }}</em>
 		</div>
 	</div>
 	<div class="row justify-content-center">

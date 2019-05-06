@@ -22,7 +22,6 @@
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="theme-color" content="#ffffff">
-		<meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -45,7 +44,9 @@
 			<br>
 		</div>
 		@include('partials.footer')
-		<script src="{{ asset('js/app.js') }}" defer></script>
+		<script src="{{ mix('js/manifest.js') }}"></script>
+		<script src="{{ mix('js/vendor.js') }}"></script>
+		<script src="{{ mix('js/app.js') }}"></script>
 		@yield('foot_scripts')
 	</body>
 </html>

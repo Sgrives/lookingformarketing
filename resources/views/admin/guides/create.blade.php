@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
 @section('head_styles')
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-@endsection
-
-@section('head_scripts')
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 @endsection
 
 @section('content')
@@ -22,7 +19,7 @@
         <div class="col-md-8">
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" id="title" value="{{ old('title') }}" placeholder="e.g. The next great guide">
+                <input type="text" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" id="title" value="{{ old('title') }}" placeholder="e.g. The next great guide">
                 @if ($errors->has('title'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('title') }}</strong>
@@ -35,7 +32,7 @@
         <div class="col-md-8">
             <div class="form-group">
                 <label for="preface">Preface</label>
-                <textarea rows="10" id="preface" class="editable medium-editor-textarea" name="preface">{{ old('preface') }}</textarea>
+                <textarea class="form-control" rows="3" name="preface">{{ old('preface') }}</textarea>
                 @if ($errors->has('preface'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('preface') }}</strong>
@@ -48,7 +45,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="category">Category</label>
-                <select class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" id="category" name="category">
+                <select class="form-control {{ $errors->has('category') ? ' is-invalid' : '' }}" id="category" name="category">
                     <option value="">Select</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -77,9 +74,7 @@
         <div class="col-md-8">
             <div class="form-group">
                 <label for="body">Body</label>
-                <textarea rows="10" id="body" class="editable medium-editor-textarea" name="body">
-                    {{ old('body') }}
-                </textarea>
+                <textarea id="body" class="form-control" rows="3" name="body">{{ old('body') }}</textarea>
                 @if ($errors->has('body'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('body') }}</strong>
@@ -99,6 +94,8 @@
 @endsection
 
 @section('foot_scripts')
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script type="text/javascript">
         flatpickr("#publish_date", {
             altInput: true,
@@ -107,19 +104,15 @@
         });
     </script>
 
-    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
     <script>
-        var editor = new MediumEditor('.editable', {
-            toolbar: {
-                buttons: ['h2', 'h3', 'h4', 'h5', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'quote', 'underline', 'anchor', 'unorderedlist','orderedlist', 'pre', 'indent', 'outdent', 'removeFormat', 'html']
-            },
-            anchor: {
-                customClassOption: 'button',
-                customClassOptionText: 'Button',
-                linkValidation: false,
-                placeholderText: 'Paste or type a link',
-                targetCheckbox: true,
-                targetCheckboxText: 'Open in new window'
+        $('#body').summernote({
+            placeholder: 'Guide body',
+            tabsize: 4,
+            height: 1000,
+            popover: {
+                image: [],
+                link: [],
+                air: []
             }
         });
     </script>
