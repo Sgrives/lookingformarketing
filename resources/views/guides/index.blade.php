@@ -29,7 +29,7 @@
                             <strong class="d-inline-block text-primary">{{ $guide->category->name }}</strong>
                             <h3 class="mb-0">{{ $guide->title }}</h3>
                         </h5>
-                        <p class="card-text">{!! str_limit($guide->preface, $limit = 40, $end = '... Read More') !!}</p>
+                        <p class="card-text">{!! str_limit($guide->preface, $limit = 120, $end = '... Read More') !!}</p>
                         <a href="{{ url('/guide/on/'.$guide->slug) }}" class="stretched-link btn btn-primary">Read More</a>
                     </div>
                 </div>
