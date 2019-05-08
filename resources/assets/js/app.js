@@ -6,3 +6,6 @@
  */
 
 require('./bootstrap');
+require('./jquery.slim.min.js');
+require('./popper.min.js');
+require('./custom');

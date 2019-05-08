@@ -16,6 +16,9 @@
 	background-color: #393E46;
 	border-radius: 5px;
 }
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.7);
+}
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
 	color: #ffffff !important;
 	background-color: #393E46;
