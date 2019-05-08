@@ -3,7 +3,8 @@
 @section('meta_info')
     <title>LFM Guides - {{ $guide->title }}</title>
     <link rel="canonical" href="https://lookingformarketing.com/guide/on/{{ $guide->slug }}" />
-    <link rel="alternate" href="https://lookingformarketing.com/guide/on/{{ $guide->slug }}" hreflang="en-us" />
+	<link rel="alternate" href="https://lookingformarketing.com/guide/on/{{ $guide->slug }}" hreflang="en-us" />
+	<meta name="description" content="{{ $guide->preface }}" />
 @endsection
 
 @section('og')
