@@ -23,7 +23,7 @@ Route::get('jobs/location/{slug}', 'LocationController@show')->name('location.sh
 Route::resource('events', 'EventController');
 Route::resource('books', 'BookController');
 Route::get('/guides', 'GuidePublicController@index')->name('public.guides.index');
-Route::get('/guide/on/{slug}', 'GuidePublicController@show')->name('public.guides.show');
+Route::get('/guides/on/{slug}', 'GuidePublicController@show')->name('public.guides.show');
 
 // Guide - Tags
 // Route::get('/guides/on/{tag}', 'TagController@index');
