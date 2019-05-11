@@ -16,6 +16,7 @@ mix.scripts([
    'resources/assets/js/popper.min.js',
    'resources/assets/js/bootstrap.min.js',
    'resources/assets/js/dynamicscrollspy.min.js',
+   'resources/assets/js/bricklayer.min.js',
    'resources/assets/js/custom.js',
    ],'public/js/app.js').version();
 

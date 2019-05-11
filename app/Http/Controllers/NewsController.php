@@ -49,7 +49,11 @@ class NewsController extends Controller
             'http://feedpress.me/searchenginejournal',
             'https://searchenginewatch.com/feed/',
             // 'http://www.thesempost.com/feed/',
-            'https://yoast.com/seo-blog/feed/'
+            'https://yoast.com/seo-blog/feed/',
+
+            //The Verge
+            'https://www.theverge.com/rss/facebook/index.xml',
+            'https://www.theverge.com/rss/google/index.xml'
         ], 3, true);
     
         $data = array(

@@ -17,23 +17,6 @@
 	<meta property="og:type" content="website">
 @endsection
 
-@section('head_styles')
-	<script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>
-	<style>
-		@media screen and (min-width: 768px) {
-			.bricklayer-column-sizer {
-				/* divide by 2. */
-				width: 25%;
-			}
-		}
-		.card {
-			margin: 10px 0px;
-		}
-	</style>
-@endsection
-
 @section('content')
 	<div class="row">
 		<div class="bricklayer">
@@ -44,11 +27,11 @@
 				<div class="card" style="background:#3b5998;">
 					<div class="card-body">
 						<h5 class="card-title">
-							<i class="fab fa-facebook-f"></i>
+							<i class="fab fa-facebook-f" style="color:white;"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
 						<p class="card-text" style="color:white;">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
@@ -62,11 +45,11 @@
 				<div class="card" style="background:#dc4e41;">
 					<div class="card-body">
 						<h5 class="card-title">
-							<i class="fab fa-google"></i>
+							<i class="fab fa-google" style="color:white;"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
 						<p class="card-text" style="color:white;">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
@@ -80,11 +63,11 @@
 				<div class="card" style="background:#bd081c;">
 					<div class="card-body">
 						<h5 class="card-title">
-							<i class="fab fa-pinterest-p"></i>
+							<i class="fab fa-pinterest-p" style="color:white;"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
 						<p class="card-text" style="color:white;">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
@@ -98,11 +81,29 @@
 				<div class="card" style="background:#0077b5;">
 					<div class="card-body">
 						<h5 class="card-title">
-							<i class="fab fa-linkedin-in"></i>
+							<i class="fab fa-linkedin-in" style="color:white;"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
 						<p class="card-text" style="color:white;">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
+						</p>
+						@if (!$item->get_date() == Null)
+							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
+						@else
+							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
+						@endif
+					</div>
+				</div>
+				
+			@elseif (str_contains($item->get_link(), 'theverge.com'))
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395367/favicon-16x16.0.png" alt="">
+							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ $item->get_title() }}</a>
+						</h5>
+						<p class="card-text">
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
@@ -119,9 +120,8 @@
 							<i class="fas fa-rss"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ $item->get_title() }}</a>
 						</h5>
-						
 						<p class="card-text">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
@@ -136,10 +136,4 @@
 
 		</div>
 	</div>
-@endsection
-
-@section('foot_scripts')
-		<script>
-		var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
-</script>
 @endsection

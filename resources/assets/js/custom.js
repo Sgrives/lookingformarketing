@@ -11,3 +11,5 @@
         testing: false //if testing, append heading tagName and ID to each heading
     });
 }(jQuery));
+
+var bricklayer = new Bricklayer(document.querySelector('.bricklayer'));
