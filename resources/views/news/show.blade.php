@@ -52,6 +52,22 @@
 						@endif
 					</div>
 				</div>
+
+			@elseif (str_contains($item->get_link(), 'linkedin.com'))
+				<div class="card" style="background:#0077b5;">
+					<div class="card-body">
+						<h5 class="card-title">
+							<i class="fab fa-linkedin-in"></i>
+							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
+						</h5>
+						@if (!$item->get_date() == Null)
+							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
+						@else
+							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
+						@endif
+					</div>
+				</div>
+
 			@else
 				<div class="card">
 					<div class="card-body">

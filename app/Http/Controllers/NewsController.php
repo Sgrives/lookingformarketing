@@ -18,6 +18,8 @@ class NewsController extends Controller
             'https://www.blogger.com/feeds/32069983/posts/default',
             'https://www.blogger.com/feeds/1090964379634258791/posts/default',
             'https://www.blog.google/products/ads/rss/',
+            //LinkedIn
+            'https://blog.linkedin.com/topics.rss.html',
             //Others
             'https://www.marketingweek.com/feed/',
             'http://feeds.searchengineland.com/searchengineland',
