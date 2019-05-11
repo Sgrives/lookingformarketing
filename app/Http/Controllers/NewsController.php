@@ -13,8 +13,6 @@ class NewsController extends Controller
             //Facebook Newsroom
             'https://newsroom.fb.com/feed/',
             'https://www.facebook.com/business/news/rss',
-            //Instagram
-            
             //Google
             'https://www.blogger.com/feeds/3580069/posts/default',
             'https://www.blogger.com/feeds/32069983/posts/default',
