@@ -17,12 +17,16 @@
 			<div class="row">
 				<div class="col-md-8">
 					<h1>{{ $guide->title }}</h1>
-					{!! $guide->body !!}
+					<article>
+						{!! $guide->body !!}
+					</article>
 				</div>
 				<div class="offset-md-1 col-md-3">
-					<div class="sticky-top">
-						<div id="sidenav"></div>
-					</div>
+					<aside>
+						<div class="sticky-top">
+							<div id="sidenav"></div>
+						</div>
+					</aside>
 				</div>
 			</div>
 		</div>
