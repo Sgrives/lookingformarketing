@@ -18,7 +18,7 @@
 @endsection
 
 @section('content')
-<div class="row">
+	<div class="row">
 		<div class="bricklayer">
 
 		@foreach ($items as $item)
@@ -30,6 +30,9 @@
 							<i class="fab fa-facebook-f"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
+						<p class="card-text" style="color:white;">
+							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
 						@else
@@ -45,6 +48,27 @@
 							<i class="fab fa-google"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
+						<p class="card-text" style="color:white;">
+							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+						</p>
+						@if (!$item->get_date() == Null)
+							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
+						@else
+							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
+						@endif
+					</div>
+				</div>
+
+			@elseif (str_contains($item->get_link(), 'pinterest.com'))
+				<div class="card" style="background:#bd081c;">
+					<div class="card-body">
+						<h5 class="card-title">
+							<i class="fab fa-pinterest-p"></i>
+							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
+						</h5>
+						<p class="card-text" style="color:white;">
+							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
 						@else
@@ -60,6 +84,9 @@
 							<i class="fab fa-linkedin-in"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
+						<p class="card-text" style="color:white;">
+							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
 						@else
@@ -75,6 +102,9 @@
 							<i class="fas fa-rss"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ $item->get_title() }}</a>
 						</h5>
+						<p class="card-text">
+							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
+						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
 						@else
