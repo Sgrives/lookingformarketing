@@ -1,4 +1,3 @@
-
 (function($){
     $('#sidenav').DynamicScrollspy({
         affix: false, //affix by default, doesn't work on Bootstrap 4
