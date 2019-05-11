@@ -1,5 +1,22 @@
 @extends('layouts.app')
 
+@section('meta_info')
+	<title>LFM News</title>
+	<link rel="canonical" href="https://lookingformarketing.com/news" />
+	<link rel="alternate" href="https://lookingformarketing.com/news" hreflang="en-us" />
+	<meta name="description" content="A RSS collection of popular marketing blogs." />		
+@endsection
+
+@section('og')
+	<meta property="og:title" content="LFM News">
+	<meta property="og:image" content="https://placeimg.com/1200/627/nature"/>
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="627">
+	<meta property="og:description" content="A RSS collection of popular marketing blogs.">
+	<meta property="og:url" content="https://lookingformarketing.com/news">
+	<meta property="og:type" content="website">
+@endsection
+
 @section('head_styles')
 	<script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
@@ -102,6 +119,7 @@
 							<i class="fas fa-rss"></i>
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ $item->get_title() }}</a>
 						</h5>
+						
 						<p class="card-text">
 							{!! str_limit(strip_tags($item->get_description()), $limit = 250, $end = '...') !!}
 						</p>
