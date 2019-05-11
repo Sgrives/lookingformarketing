@@ -6,6 +6,8 @@ Route::get('/case-studies', 'CasestudyController@index')->name('casestudies');
 Route::get('/shop', 'ShopController@index')->name('shop');
 Route::view('help', 'pages.help');
 
+Route::get('news', 'NewsController@index');
+
 // Jobs
 Route::get('/jobs/create/preview/{record}', 'JobController@preview')->name('jobs.preview');
 Route::get('/jobs/create/purchase/{record}', 'JobController@purchase')->name('jobs.purchase');
