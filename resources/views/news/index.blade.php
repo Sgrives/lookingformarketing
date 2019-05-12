@@ -35,8 +35,6 @@
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@else
-							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
 						@endif
 					</div>
 				</div>
@@ -53,8 +51,6 @@
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@else
-							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
 						@endif
 					</div>
 				</div>
@@ -71,8 +67,6 @@
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@else
-							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
 						@endif
 					</div>
 				</div>
@@ -89,8 +83,6 @@
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@else
-							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
 						@endif
 					</div>
 				</div>
@@ -107,8 +99,6 @@
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@else
-							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
 						@endif
 					</div>
 				</div>
@@ -125,8 +115,6 @@
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@else
-							<p><small>Posted on {{ Carbon\Carbon::now()->format('j F Y') }}</small></p>
 						@endif
 					</div>
 				</div>
