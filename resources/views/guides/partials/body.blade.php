@@ -8,7 +8,7 @@
         <h1>{{ $guide->title }}</h1>
         <div>{!! $guide->body !!}</div>
     </article>
-    <aside class="offset-md-1 col-md-3">
+    <aside class="offset-md-1 col-md-3 d-sm-none d-md-block">
         <div class="sticky-top">
             <div id="sidenav"></div>
         </div>
