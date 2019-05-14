@@ -4,7 +4,8 @@
 	<title>LFM News</title>
 	<link rel="canonical" href="https://lookingformarketing.com/news" />
 	<link rel="alternate" href="https://lookingformarketing.com/news" hreflang="en-us" />
-	<meta name="description" content="A RSS collection of popular marketing blogs." />		
+	<meta name="description" content="A RSS collection of popular marketing blogs." />
+	<meta http-equiv="refresh" content="14400">		
 @endsection
 
 @section('og')
@@ -18,6 +19,9 @@
 @endsection
 
 @section('content')
+	<div class="row d-flex justify-content-end mr-3">
+		<em style="font-size:10px;">Auto refresh in <span id="countdowntimer">14400 </span> Seconds</em>
+	</div>
 	<div class="row">
 		<div class="bricklayer">
 
@@ -31,7 +35,7 @@
 							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link" style="color:white;">{{ $item->get_title() }}</a>
 						</h5>
 						<p class="card-text" style="color:white;">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
+							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_permalink(), PHP_URL_HOST) !!}</b>
 						</p>
 						@if (!$item->get_date() == Null)
 							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
@@ -108,7 +112,7 @@
 					<div class="card-body">
 						<h5 class="card-title">
 							<i class="fas fa-rss"></i>
-							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ $item->get_title() }}</a>
+							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ htmlspecialchars_decode($item->get_title()) }}</a>
 						</h5>
 						<p class="card-text">
 							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
@@ -124,4 +128,16 @@
 
 		</div>
 	</div>
+@endsection
+
+@section('foot_scripts')
+	<script type="text/javascript">
+		var timeleft = 14400;
+		var downloadTimer = setInterval(function(){
+		timeleft--;
+		document.getElementById("countdowntimer").textContent = timeleft;
+		if(timeleft <= 0)
+			clearInterval(downloadTimer);
+		},1000);
+	</script>
 @endsection

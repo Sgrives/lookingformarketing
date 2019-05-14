@@ -22,6 +22,19 @@ class NewsController extends Controller
             'https://www.blog.google/products/ads/rss/',
             'https://www.blog.google/products/marketingplatform/360/rss/',
 
+            //Tech Blogs
+            'https://9to5mac.com/guides/whatsapp/feed/',
+            'https://9to5mac.com/guides/facebook/feed/',
+            'https://9to5mac.com/guides/instagram/feed/',
+            'https://9to5mac.com/guides/twitter/feed/',
+            'https://9to5mac.com/guides/linkedin/feed/',
+
+            'https://9to5google.com/guides/whatsapp/feed/',
+            'https://9to5google.com/guides/facebook/feed/',
+            'https://9to5google.com/guides/instagram/feed/',
+            'https://9to5google.com/guides/twitter/feed/',
+            'https://9to5google.com/guides/linkedin/feed/',
+
             //Others
             'https://www.marketingweek.com/feed/',
             'http://feeds.searchengineland.com/searchengineland',
@@ -54,7 +67,6 @@ class NewsController extends Controller
             'https://feeds2.feedburner.com/itsnicethat/SlXC',
             'https://www.fastcompany.com/co-design/rss',
             'https://www.moderncopywriter.com/feed/',
-            'https://www.marketingweek.com/feed/',
             'http://feedpress.me/mozblog',
             'https://blog.hubspot.com/marketing/rss.xml',
             'https://www.semrush.com/blog/feed/',

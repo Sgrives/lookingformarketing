@@ -1,7 +1,16 @@
 @media screen and (min-width: 768px) {
     .bricklayer-column-sizer {
-        /* divide by 2. */
         width: 25%;
+    }
+}
+@media screen and (min-width: 1536px) {
+    .bricklayer-column-sizer {
+        width: 20%;
+    }
+}
+@media screen and (min-width: 3072px) {
+    .bricklayer-column-sizer {
+        width: 10%;
     }
 }
 .card {
