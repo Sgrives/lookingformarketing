@@ -28,12 +28,7 @@ class NewsController extends Controller
             'https://9to5mac.com/guides/instagram/feed/',
             'https://9to5mac.com/guides/twitter/feed/',
             'https://9to5mac.com/guides/linkedin/feed/',
-
-            'https://9to5google.com/guides/whatsapp/feed/',
-            'https://9to5google.com/guides/facebook/feed/',
-            'https://9to5google.com/guides/instagram/feed/',
-            'https://9to5google.com/guides/twitter/feed/',
-            'https://9to5google.com/guides/linkedin/feed/',
+            'https://www.theverge.com/rss/facebook/index.xml',
 
             //Others
             'https://www.marketingweek.com/feed/',
@@ -56,8 +51,6 @@ class NewsController extends Controller
             'http://feedpress.me/searchenginejournal',
             'https://searchenginewatch.com/feed/',
             'https://yoast.com/seo-blog/feed/',
-            'https://www.theverge.com/rss/facebook/index.xml',
-            'https://www.theverge.com/rss/google/index.xml',
             'https://www.adweek.com/feed/',
             'https://www.admonsters.com/feed/',
             'http://feeds2.feedburner.com/ad-exchange-news',
@@ -73,7 +66,8 @@ class NewsController extends Controller
             'https://www.adweek.com/agencyspy/feed/',
             'http://feeds.feedburner.com/GreatAds',
             'https://www.adsoftheworld.com/node/feed',
-            'https://mashable.com/category/social-media/feed/'
+            'https://mashable.com/category/social-media/feed/',
+            'https://martechtoday.com/feed'
         ], 3, true);
     
         $data = array(
