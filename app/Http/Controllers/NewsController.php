@@ -30,6 +30,9 @@ class NewsController extends Controller
             'https://9to5mac.com/guides/linkedin/feed/',
             'https://www.theverge.com/rss/facebook/index.xml',
 
+            //Social Media
+            'https://buffer.com/resources/feed',
+
             //Others
             'https://www.marketingweek.com/feed/',
             'http://feeds.searchengineland.com/searchengineland',
@@ -67,7 +70,14 @@ class NewsController extends Controller
             'http://feeds.feedburner.com/GreatAds',
             'https://www.adsoftheworld.com/node/feed',
             'https://mashable.com/category/social-media/feed/',
-            'https://martechtoday.com/feed'
+            'https://martechtoday.com/feed',
+            'https://ahrefs.com/blog/feed/',
+            'http://www.animalz.co/blog/feed/',
+            'https://detailed.com/blog/feed/',
+            'https://growandconvert.com/articles/feed/',
+            'https://www.intercom.com/blog/feed',
+            'http://www.blindfiveyearold.com/feed/',
+            'https://unbounce.com/blog/feed/'
         ], 3, true);
     
         $data = array(

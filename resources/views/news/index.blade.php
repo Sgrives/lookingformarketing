@@ -20,7 +20,7 @@
 
 @section('content')
 	<div class="row d-flex justify-content-end mr-3">
-		<em style="font-size:10px;">Auto refresh in <span id="countdowntimer">14400 </span> Seconds</em>
+		<em style="font-size:10px;">Auto refresh in <span id="countdowntimer">7200 </span> Seconds</em>
 	</div>
 	<div class="row">
 		<div class="bricklayer">
@@ -90,22 +90,6 @@
 						@endif
 					</div>
 				</div>
-				
-			@elseif (str_contains($item->get_link(), 'theverge.com'))
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">
-							<img src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395367/favicon-16x16.0.png" alt="">
-							<a href="{{ $item->get_permalink() }}" target="_blank" class="stretched-link">{{ $item->get_title() }}</a>
-						</h5>
-						<p class="card-text">
-							{!! str_limit(strip_tags($item->get_description()), $limit = 300, $end = '...') !!} <b>{!! parse_url($item->get_link(), PHP_URL_HOST) !!}</b>
-						</p>
-						@if (!$item->get_date() == Null)
-							<p><small>Posted on {{ $item->get_date('j F Y') }}</small></p>
-						@endif
-					</div>
-				</div>
 
 			@else
 				<div class="card">
@@ -132,7 +116,7 @@
 
 @section('foot_scripts')
 	<script type="text/javascript">
-		var timeleft = 14400;
+		var timeleft = 7200;
 		var downloadTimer = setInterval(function(){
 		timeleft--;
 		document.getElementById("countdowntimer").textContent = timeleft;

@@ -21,7 +21,7 @@ return [
     | Life of cache, in seconds
     |
     */
-    'cache.life'               => 14400,
+    'cache.life'               => 7200,
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
     |
     */
-    'strip_html_tags.disabled' => false,
+    'strip_html_tags.disabled' => true,
 
     /*
     |--------------------------------------------------------------------------
